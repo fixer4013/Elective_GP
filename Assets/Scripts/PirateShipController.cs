@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,11 +16,22 @@ public class PirateShipController : MonoBehaviour
     private float BoatSpeed = 100.0f;
     private float SeaSize = 500.0f;
     private float RotationSpeed = 180.0f;
+    public float currentBoatSpeed;
 
+
+    private int maxAmmoCap = 5;
+    private int ammunition;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        currentBoatSpeed = BoatSpeed - 14 * ammunition;
     }
 
     public void SetAI(BaseAI _ai) {
@@ -47,9 +59,9 @@ public class PirateShipController : MonoBehaviour
     }
 
     public IEnumerator __Ahead(float distance) {
-        int numFrames = (int)(distance / (BoatSpeed * Time.fixedDeltaTime));
+        int numFrames = (int)(distance / (currentBoatSpeed * Time.fixedDeltaTime));
         for (int f = 0; f < numFrames; f++) {
-            transform.Translate(new Vector3(0f, 0f, BoatSpeed * Time.fixedDeltaTime), Space.Self);
+            transform.Translate(new Vector3(0f, 0f, currentBoatSpeed * Time.fixedDeltaTime), Space.Self);
             Vector3 clampedPosition = Vector3.Max(Vector3.Min(transform.position, new Vector3(SeaSize, 0, SeaSize)), new Vector3(-SeaSize, 0, -SeaSize));
             transform.position = clampedPosition;
 
@@ -58,9 +70,9 @@ public class PirateShipController : MonoBehaviour
     }
 
     public IEnumerator __Back(float distance) {
-        int numFrames = (int)(distance / (BoatSpeed * Time.fixedDeltaTime));
+        int numFrames = (int)(distance / (currentBoatSpeed * Time.fixedDeltaTime));
         for (int f = 0; f < numFrames; f++) {
-            transform.Translate(new Vector3(0f, 0f, -BoatSpeed * Time.fixedDeltaTime), Space.Self);
+            transform.Translate(new Vector3(0f, 0f, -currentBoatSpeed * Time.fixedDeltaTime), Space.Self);
             Vector3 clampedPosition = Vector3.Max(Vector3.Min(transform.position, new Vector3(SeaSize, 0, SeaSize)), new Vector3(-SeaSize, 0, -SeaSize));
             transform.position = clampedPosition;
 
@@ -129,5 +141,19 @@ public class PirateShipController : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Ammunition>())
+        {
+            if (ammunition < maxAmmoCap)
+            {
+                ammunition += 1;
+            }
+            Destroy(other.gameObject);
+        }
+    }
+    
+    
+    
     
 }
