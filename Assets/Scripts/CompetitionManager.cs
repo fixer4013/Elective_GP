@@ -13,13 +13,17 @@ public class CompetitionManager : MonoBehaviour
     void Start()
     {
         BaseAI[] aiArray = new BaseAI[] {
-            new IljaAI(), 
-            new PondAI(), 
-            new PondAI(), 
-            new PondAI()
+            new IljaAI(),
+            new PondAI(),
+            new PondAI(),
+            new PondAI(),
+        //Added a "new iljaAI" to the list. - Aadi.
+            new IljaAI()
         };
-
-        for (int i = 0; i < 4; i++)
+        //changed the integer value of greater than i from 4 to 5. - Aadi.
+        //Increased the size for Spawn Points section in Inspector Window. - Aadi.
+        //Cloned the spawnpoint5 from spawnpoint4 and dragndropped it to Element 4. - Aadi.
+        for (int i = 0; i < 5; i++)
         {
             GameObject pirateShip = Instantiate(PirateShipPrefab, SpawnPoints[i].position, SpawnPoints[i].rotation);
             PirateShipController pirateShipController = pirateShip.GetComponent<PirateShipController>();
