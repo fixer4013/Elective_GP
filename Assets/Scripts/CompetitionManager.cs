@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CompetitionManager : MonoBehaviour
-{
+{ 
     public GameObject PirateShipPrefab = null;
     public Transform[] SpawnPoints = null;
+    //Added a ammospawnpoint - Ruben
+    public GameObject AmmunitionPrefab = null;
+    public Transform[] AmmoSpawn = null;
 
     private List<PirateShipController> pirateShips = new List<PirateShipController>();
 
@@ -14,7 +17,8 @@ public class CompetitionManager : MonoBehaviour
     {
         BaseAI[] aiArray = new BaseAI[] {
             new IljaAI(),
-            new PondAI(),
+        //Added 'RubenAI' to the list -Ruben
+            new RubenAI(),
             new PondAI(),
             new PondAI(),
         //Added a "new iljaAI" to the list. - Aadi.
@@ -30,7 +34,7 @@ public class CompetitionManager : MonoBehaviour
             pirateShipController.SetAI(aiArray[i]);
             pirateShips.Add(pirateShipController);
         }
-        
+       
     }
 
     // Update is called once per frame
@@ -39,6 +43,8 @@ public class CompetitionManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             foreach (var pirateShip in pirateShips) {
                 pirateShip.StartBattle();
+            // For now ammo is instantiated when the game starts -Ruben    
+                Instantiate(AmmunitionPrefab, new Vector3(-291, 30, 133), Quaternion.identity);
             }
         }
     }

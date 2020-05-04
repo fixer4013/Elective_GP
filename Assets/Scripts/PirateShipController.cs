@@ -140,7 +140,7 @@ public class PirateShipController : MonoBehaviour
             yield return new WaitForFixedUpdate();            
         }
     }
-
+    //Need to figure out how to connect this Ammo integer to to actual gameobjects, also ammo needs to decrease- Ruben
     public void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Ammunition>())

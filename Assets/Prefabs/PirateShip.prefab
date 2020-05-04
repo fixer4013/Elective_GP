@@ -181,6 +181,7 @@ MonoBehaviour:
   - {fileID: 1607915427564693173}
   - {fileID: 1607915427564693193}
   - {fileID: 1607915427564693175}
+  currentBoatSpeed: 10
 --- !u!65 &4529641964278838392
 BoxCollider:
   m_ObjectHideFlags: 0
