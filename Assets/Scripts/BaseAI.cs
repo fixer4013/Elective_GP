@@ -53,6 +53,10 @@ public class BaseAI
         yield return Ship.__FireRight(power);
     }
 
+    public IEnumerator DropMine() {
+        yield return Ship.__DropMine();
+    }
+
     public virtual IEnumerator RunAI() {
         yield return null;
     }
