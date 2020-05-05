@@ -18,9 +18,11 @@ public class PirateShipController : MonoBehaviour
     private float RotationSpeed = 180.0f;
     public float currentBoatSpeed;
 
-
+    //all values for the different types of ammo. -Martin, Maxym
     private int maxAmmoCap = 5;
     private int ammunition;
+    public int cannonballs;
+    public int mines;
     
     
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class PirateShipController : MonoBehaviour
 
     private void Update()
     {
+        //calculate boat speed based on the amount of ammo the ship carries. -Martin, Maxym
         currentBoatSpeed = BoatSpeed - 14 * ammunition;
     }
 
@@ -102,18 +105,36 @@ public class PirateShipController : MonoBehaviour
         yield return new WaitForFixedUpdate();
     }
 
+    //Added so you cant shoot when you dont have any cannonballs. -Maxym
     public IEnumerator __FireFront(float power) {
-        GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, CannonFrontSpawnPoint.rotation);
+        if (cannonballs > 0)
+        {
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, CannonFrontSpawnPoint.rotation);
+            cannonballs -= 1;
+            ammunition -= 1;
+        }
         yield return new WaitForFixedUpdate();
     }
 
+    //Added so you cant shoot when you dont have any cannonballs. -Maxym
     public IEnumerator __FireLeft(float power) {
-        GameObject newInstance = Instantiate(CannonBallPrefab, CannonLeftSpawnPoint.position, CannonLeftSpawnPoint.rotation);
+        if (cannonballs > 0)
+        {
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonLeftSpawnPoint.position, CannonLeftSpawnPoint.rotation);
+            cannonballs -= 1;
+            ammunition -= 1;
+        }
         yield return new WaitForFixedUpdate();
     }
 
+    //Added so you cant shoot when you dont have any cannonballs. -Maxym
     public IEnumerator __FireRight(float power) {
-        GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, CannonRightSpawnPoint.rotation);
+        if (cannonballs > 0)
+        {
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, CannonRightSpawnPoint.rotation);
+            cannonballs -= 1;
+            ammunition -= 1;
+        }
         yield return new WaitForFixedUpdate();
     }
 
@@ -141,14 +162,31 @@ public class PirateShipController : MonoBehaviour
         }
     }
     //Need to figure out how to connect this Ammo integer to to actual gameobjects, also ammo needs to decrease- Ruben
+
+    //Added code based on what type of ammo you pick up, which is set inside the ammunition script on the ammo crates. -Maxym, partly Martin
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log(this.tag);
         if (other.GetComponent<Ammunition>())
         {
-            if (ammunition < maxAmmoCap)
+            if (other.GetComponent<Ammunition>().ammoType == "Cannonball")
             {
-                ammunition += 1;
+                if (ammunition < maxAmmoCap)
+                {
+                    ammunition += 1;
+                    cannonballs += 1;
+                }
             }
+            if (other.GetComponent<Ammunition>().ammoType == "Mine")
+            {
+                if (ammunition < maxAmmoCap - 2)
+                {
+                    ammunition += 3;
+                    mines += 1;
+                }
+            }
+
+
             Destroy(other.gameObject);
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ammunition : MonoBehaviour
 {
+    public string ammoType;
     // Start is called before the first frame update
     void Start()
     {

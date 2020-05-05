@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5491467875917792370}
   - component: {fileID: 5491467875917792365}
   - component: {fileID: 5491467875917792364}
-  m_Layer: 0
+  - component: {fileID: -2530195837994405809}
+  - component: {fileID: 8415030345525102592}
+  m_Layer: 10
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +83,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-2530195837994405809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491467875917792367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f34df6fa40abf4b91a75124f274320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoType: Cannonball
+--- !u!65 &8415030345525102592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491467875917792367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.15, y: 5.189444, z: 6.332252}
+  m_Center: {x: 0, y: 2.594722, z: -0.016125917}
 --- !u!1 &5491467876801986970
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +120,7 @@ GameObject:
   - component: {fileID: 5491467876801986971}
   - component: {fileID: 5491467876801986969}
   - component: {fileID: 5491467876801986968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

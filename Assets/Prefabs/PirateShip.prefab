@@ -182,6 +182,8 @@ MonoBehaviour:
   - {fileID: 1607915427564693193}
   - {fileID: 1607915427564693175}
   currentBoatSpeed: 10
+  cannonballs: 0
+  mines: 0
 --- !u!65 &4529641964278838392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -224,7 +226,7 @@ GameObject:
   - component: {fileID: 6811341055644707241}
   - component: {fileID: 8465565996615593584}
   - component: {fileID: 8960578696574778319}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Trigger
   m_Icon: {fileID: 0}
