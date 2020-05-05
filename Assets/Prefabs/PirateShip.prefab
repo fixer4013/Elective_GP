@@ -181,6 +181,8 @@ MonoBehaviour:
   - {fileID: 1607915427564693173}
   - {fileID: 1607915427564693193}
   - {fileID: 1607915427564693175}
+  MinePrefab: {fileID: 6291006815246865859, guid: 358e25b475e86c6499d90a262946912a,
+    type: 3}
   currentBoatSpeed: 10
   cannonballs: 0
   mines: 0

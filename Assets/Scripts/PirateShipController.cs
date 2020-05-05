@@ -13,6 +13,8 @@ public class PirateShipController : MonoBehaviour
     public GameObject[] sails = null;
     private BaseAI ai = null;
 
+    public GameObject MinePrefab = null;
+
     private float BoatSpeed = 100.0f;
     private float SeaSize = 500.0f;
     private float RotationSpeed = 180.0f;
@@ -134,6 +136,17 @@ public class PirateShipController : MonoBehaviour
             GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, CannonRightSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
+        }
+        yield return new WaitForFixedUpdate();
+    }
+
+    public IEnumerator __DropMine()
+    {
+        if (mines > 0)
+        {
+            GameObject newInstance = Instantiate(MinePrefab, transform.position, transform.rotation);
+            mines -= 1;
+            ammunition -= 3;
         }
         yield return new WaitForFixedUpdate();
     }
