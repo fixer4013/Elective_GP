@@ -14,7 +14,6 @@ public class BaseAI
     // Events
     public virtual void OnScannedRobot(ScannedRobotEvent e)
     {
-        // 
     }
 
     public IEnumerator Ahead(float distance) {

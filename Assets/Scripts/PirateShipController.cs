@@ -23,18 +23,24 @@ public class PirateShipController : MonoBehaviour
     private int ammunition;
     public int cannonballs;
     public int mines;
-    
-    
+
+    //maxHP & currentHP to create the skeleton of health of ship obeying Ilja's AI. - Aadi.
+    public int maxHP = 100;
+    public int currentHP;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //currentHp is same as maxHP at the game's start. - Aadi.
+        currentHP = maxHP;
+
     }
 
     private void Update()
     {
         //calculate boat speed based on the amount of ammo the ship carries. -Martin, Maxym
         currentBoatSpeed = BoatSpeed - 14 * ammunition;
+
     }
 
     public void SetAI(BaseAI _ai) {
@@ -190,8 +196,9 @@ public class PirateShipController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-    
-    
-    
-    
+    //Added a function to provide health reduction using the "currentHP" and "damage" integer. - Aadi.
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+    }
 }

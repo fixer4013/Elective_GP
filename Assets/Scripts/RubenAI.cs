@@ -27,6 +27,7 @@ public class RubenAI : BaseAI
 
     public override void OnScannedRobot(ScannedRobotEvent e)
     {
-        Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
+        //commented out the debug. - Aadi
+        //Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
     }
 }
