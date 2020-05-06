@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PirateShipController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PirateShipController : MonoBehaviour
     public GameObject Lookout = null;
     public GameObject[] sails = null;
     private BaseAI ai = null;
+    public Vector3 rotationZMax = new Vector3(0, 0, 10);
+
 
     public GameObject MinePrefab = null;
 
@@ -19,6 +22,9 @@ public class PirateShipController : MonoBehaviour
     private float SeaSize = 500.0f;
     private float RotationSpeed = 180.0f;
     public float currentBoatSpeed;
+    float inaccuracy = 15;
+    //float randomAngle = Random.Range(-15, 15);
+    
 
     //all values for the different types of ammo. -Martin, Maxym
     private int maxAmmoCap = 5;
@@ -114,10 +120,11 @@ public class PirateShipController : MonoBehaviour
     }
 
     //Added so you cant shoot when you dont have any cannonballs. -Maxym
+    //
     public IEnumerator __FireFront(float power) {
         if (cannonballs > 0)
         {
-            GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, CannonFrontSpawnPoint.rotation);
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonFrontSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
         }
@@ -127,8 +134,8 @@ public class PirateShipController : MonoBehaviour
     //Added so you cant shoot when you dont have any cannonballs. -Maxym
     public IEnumerator __FireLeft(float power) {
         if (cannonballs > 0)
-        {
-            GameObject newInstance = Instantiate(CannonBallPrefab, CannonLeftSpawnPoint.position, CannonLeftSpawnPoint.rotation);
+        {      
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonLeftSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonLeftSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
         }
@@ -139,7 +146,7 @@ public class PirateShipController : MonoBehaviour
     public IEnumerator __FireRight(float power) {
         if (cannonballs > 0)
         {
-            GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, CannonRightSpawnPoint.rotation);
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonRightSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
         }
