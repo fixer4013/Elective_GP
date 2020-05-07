@@ -59,4 +59,9 @@ public class BaseAI
     public virtual IEnumerator RunAI() {
         yield return null;
     }
+
+    public IEnumerator RapidFire()
+    {
+        yield return Ship.__RapidFire();
+    }
 }

@@ -221,4 +221,20 @@ public class PirateShipController : MonoBehaviour
     {
         currentHP -= damage;
     }
+
+    //Added a function for rapid fire - Martin
+    public IEnumerator __RapidFire()
+    {
+        if (cannonballs > 0)
+        {
+            var currentCannonBalls = cannonballs;
+            for (int i = 0; i < currentCannonBalls; i++)
+            {
+                GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonFrontSpawnPoint.rotation);
+                ammunition--;
+                cannonballs--;
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
 }
