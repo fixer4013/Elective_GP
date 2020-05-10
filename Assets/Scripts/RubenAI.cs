@@ -18,11 +18,7 @@ public class RubenAI : BaseAI
             yield return TurnLookoutLeft(90);
             yield return TurnRight(90);
         }
-        //** Trying to get the ammunition to go down
-       // if(FireFront,FireLeft,FireRight)
-       // {
-       //     ammunition.GetComponent<PirateShipController>()
-       // }
+
     }
 
     public override void OnScannedRobot(ScannedRobotEvent e)
