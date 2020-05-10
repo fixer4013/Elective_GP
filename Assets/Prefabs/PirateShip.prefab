@@ -181,6 +181,11 @@ MonoBehaviour:
   - {fileID: 1607915427564693173}
   - {fileID: 1607915427564693193}
   - {fileID: 1607915427564693175}
+  rotationZMax: {x: 0, y: 0, z: 10}
+  chest: {fileID: 5491467875917792370, guid: 0710b3086d44c4740a9c2aac2fdf3a92, type: 3}
+  PirateShipRigidbody: {fileID: 8082125333420773932}
+  turn: 10
+  searchSpeed: 250
   MinePrefab: {fileID: 6291006815246865859, guid: 358e25b475e86c6499d90a262946912a,
     type: 3}
   currentBoatSpeed: 10

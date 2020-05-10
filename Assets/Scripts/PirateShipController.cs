@@ -14,9 +14,17 @@ public class PirateShipController : MonoBehaviour
     public GameObject[] sails = null;
     private BaseAI ai = null;
     public Vector3 rotationZMax = new Vector3(0, 0, 10);
+    
 
+    // Added some floats etc while trying to fix my script - Ruben
+    public Transform chest;
+    public Rigidbody PirateShipRigidbody;
+    public float turn = 100.0f;
+    public float searchSpeed = 180.0f;
 
     public GameObject MinePrefab = null;
+
+
 
     private float BoatSpeed = 100.0f;
     private float SeaSize = 500.0f;
@@ -25,6 +33,7 @@ public class PirateShipController : MonoBehaviour
     float inaccuracy = 15;
     //float randomAngle = Random.Range(-15, 15);
     
+
 
     //all values for the different types of ammo. -Martin, Maxym
     private int maxAmmoCap = 5;
@@ -62,8 +71,9 @@ public class PirateShipController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        
     }
 
     void OnTriggerStay(Collider other) {
@@ -237,4 +247,20 @@ public class PirateShipController : MonoBehaviour
             }
         }
     }
+    /* tried adding Ammosearch function, could not get working. Commented out for the time being otherwise game wont run - Ruben
+    public IEnumerator _SearchAmmo()
+            {
+                if(gameObject.GetComponent<PirateShipController>())
+                {
+                    if (ammunition < 2)
+                    {
+                        PirateShipRigidbody.velocity = transform.forward * searchSpeed;
+                         var boatRotation = Quaternion.LookRotation(chest.position - transform.position);
+                        PirateShipRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, boatRotation,turn));
+
+                        yield return new WaitForFixedUpdate();
+                    }
+                }
+                //yield return new WaitForFixedUpdate();
+            }*/
 }
