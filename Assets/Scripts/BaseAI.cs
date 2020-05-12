@@ -56,6 +56,11 @@ public class BaseAI
         yield return Ship.__DropMine();
     }
 
+    public void SpeedBoost()
+    {
+        Ship.__SpeedBoost();
+    }
+
     public virtual IEnumerator RunAI() {
         yield return null;
     }

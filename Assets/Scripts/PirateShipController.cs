@@ -45,6 +45,10 @@ public class PirateShipController : MonoBehaviour
     public int maxHP = 100;
     public int currentHP;
 
+    //Speed boost variables -Maxym
+    public bool speedBoostCooldown;
+    float speedBoostValue = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +60,7 @@ public class PirateShipController : MonoBehaviour
     private void Update()
     {
         //calculate boat speed based on the amount of ammo the ship carries. -Martin, Maxym
-        currentBoatSpeed = BoatSpeed - 14 * ammunition;
+        currentBoatSpeed = (BoatSpeed - 14 * ammunition) * speedBoostValue;
 
     }
 
@@ -172,6 +176,27 @@ public class PirateShipController : MonoBehaviour
             ammunition -= 3;
         }
         yield return new WaitForFixedUpdate();
+    }
+
+    //made a speedboost function that is possible to call during movement -Maxym
+    public void __SpeedBoost()
+    {
+        StartCoroutine(__SpeedBoostCoroutine());
+    }
+
+    //made a speedboost that gives more speed for a small time and after less speed for more time -Maxym
+    public IEnumerator __SpeedBoostCoroutine()
+    {
+        if (!speedBoostCooldown)
+        {
+            speedBoostCooldown = true;
+            speedBoostValue = 1.5f;
+            yield return new WaitForSeconds(1.5f);
+            speedBoostValue = 0.5f;
+            yield return new WaitForSeconds(4f);
+            speedBoostValue = 1;
+            speedBoostCooldown = false;
+        }
     }
 
     public void __SetColor(Color color) {
