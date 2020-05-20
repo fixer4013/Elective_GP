@@ -17,7 +17,8 @@ public class CompetitionManager : MonoBehaviour
             new IljaAI(),
         //Added 'RubenAI' to the list -Ruben
             new RubenAI(),
-            new PondAI(),
+        //Added 'MaxymAI' to the list -Maxym
+            new MaxymAI(),
             new PondAI(),
         //Added a "new iljaAI" to the list. - Aadi.
             new IljaAI()
@@ -68,8 +69,18 @@ public class CompetitionManager : MonoBehaviour
                 pirateShip.StartBattle();
                 // For now ammo is instantiated when the game starts -Ruben
                 //Changed the coordinate from (-291, 30, 133) to (-278, 30, -275). - Aadi.
-                Instantiate(AmmunitionPrefab, new Vector3(-278, 30, -275), Quaternion.identity);
+                //Instantiate(AmmunitionPrefab, new Vector3(-278, 30, -275), Quaternion.identity);
             }
         }
+            // Made it so that 5 pieces of amma spawn when pressing the 'TAB' button instead of on start
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            Instantiate(AmmunitionPrefab, new Vector3(-278, 30, 275), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(303, 30, 285), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(-324, 30, -181), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(125, 30, -93), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(355, 30, -296), Quaternion.identity);
+
+        }
+
     }
 }

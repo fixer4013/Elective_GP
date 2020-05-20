@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IljaAI : BaseAI
+public class MaxymAI : BaseAI
 {
     public override IEnumerator RunAI() {
         for (int i = 0; i < 10; i++)
         {
             yield return Ahead(200);
-            yield return RapidFire();
-            yield return FireFront(1);
+            SpeedBoost();
+            yield return Ahead(200);
+
             yield return TurnLookoutLeft(90);
             yield return TurnLeft(360);
             yield return FireLeft(1);
