@@ -22,6 +22,7 @@ public class CannonBall : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {

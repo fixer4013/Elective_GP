@@ -12,10 +12,8 @@ public class CompetitionManager : MonoBehaviour
 
     private List<PirateShipController> pirateShips = new List<PirateShipController>();
 
-    // Start is called before the first frame update
-    void Start()
+    BaseAI[] aiArray = new BaseAI[]
     {
-        BaseAI[] aiArray = new BaseAI[] {
             new IljaAI(),
         //Added 'RubenAI' to the list -Ruben
             new RubenAI(),
@@ -23,7 +21,12 @@ public class CompetitionManager : MonoBehaviour
             new PondAI(),
         //Added a "new iljaAI" to the list. - Aadi.
             new IljaAI()
-        };
+    };
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //moved the aiArray list command to outside. - Aadi.
         //changed the integer value of greater than i from 4 to 5. - Aadi.
         //Increased the size for Spawn Points section in Inspector Window. - Aadi.
         //Cloned the spawnpoint5 from spawnpoint4 and dragndropped it to Element 4. - Aadi.
@@ -33,6 +36,26 @@ public class CompetitionManager : MonoBehaviour
             PirateShipController pirateShipController = pirateShip.GetComponent<PirateShipController>();
             pirateShipController.SetAI(aiArray[i]);
             pirateShips.Add(pirateShipController);
+            if (i == 0)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkOne();
+            }
+            if (i == 1)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkTwo();
+            }
+            if (i == 2)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkThree();
+            }
+            if (i == 3)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkFour();
+            }
+            if (i == 4)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkFive();
+            }
         }
        
     }

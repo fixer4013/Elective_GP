@@ -35,13 +35,13 @@ public class PirateShipController : MonoBehaviour
     //maxHP & currentHP to create the skeleton of health of ship obeying Ilja's AI. - Aadi.
     public int maxHP = 100;
     public int currentHP;
+    public int LowHP = 20;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //currentHp is same as maxHP at the game's start. - Aadi.
         currentHP = maxHP;
-
     }
 
     private void Update()
@@ -220,5 +220,45 @@ public class PirateShipController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
+    }
+    //Perk1 - Aadi.
+    public void PerkOne()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkOne.
+        }
+    }
+    //Perk2 - Aadi.
+    public void PerkTwo()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkTwo.
+        }
+    }
+    //Perk3 - Aadi.
+    public void PerkThree()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkThree.
+        }
+    }
+    //Perk4 - Aadi.
+    public void PerkFour()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkFour.
+        }
+    }
+    //Perk5 - Aadi.
+    public void PerkFive()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkFive.
+        }
     }
 }
