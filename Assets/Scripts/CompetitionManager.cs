@@ -19,7 +19,7 @@ public class CompetitionManager : MonoBehaviour
             new RubenAI(),
         //Added 'MaxymAI' to the list -Maxym
             new MaxymAI(),
-            new PondAI(),
+            new MartinAI(), 
         //Added a "new iljaAI" to the list. - Aadi.
             new IljaAI()
     };

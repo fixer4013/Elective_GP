@@ -19,6 +19,7 @@
           <e p="IljaAI.cs" t="Include" />
           <e p="LookoutCollider.cs" t="Include" />
           <e p="MartinAI.cs" t="Include" />
+          <e p="MaxymAI.cs" t="Include" />
           <e p="Mine.cs" t="Include" />
           <e p="PirateShipController.cs" t="Include" />
           <e p="PondAI.cs" t="Include" />
