@@ -14,7 +14,8 @@ public class CompetitionManager : MonoBehaviour
 
     BaseAI[] aiArray = new BaseAI[]
     {
-            new IljaAI(),
+        //Added 'AadiAI' to the list -Aadi.
+            new AadiAI(),
         //Added 'RubenAI' to the list -Ruben
             new RubenAI(),
         //Added 'MaxymAI' to the list -Maxym

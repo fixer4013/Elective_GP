@@ -261,7 +261,7 @@ public class PirateShipController : MonoBehaviour
     {
         if (currentHP < LowHP)
         {
-            //Add the code for PerkOne.
+            //AadiAI perk here.
         }
     }
     //Perk2 - Aadi.
