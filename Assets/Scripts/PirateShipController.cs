@@ -77,7 +77,7 @@ public class PirateShipController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        
+      
     }
 
     void OnTriggerStay(Collider other) {
@@ -312,20 +312,18 @@ public class PirateShipController : MonoBehaviour
             }
         }
     }
-    /* tried adding Ammosearch function, could not get working. Commented out for the time being otherwise game wont run - Ruben
-    public IEnumerator _SearchAmmo()
-            {
-                if(gameObject.GetComponent<PirateShipController>())
-                {
-                    if (ammunition < 2)
-                    {
-                        PirateShipRigidbody.velocity = transform.forward * searchSpeed;
-                         var boatRotation = Quaternion.LookRotation(chest.position - transform.position);
-                        PirateShipRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, boatRotation,turn));
 
-                        yield return new WaitForFixedUpdate();
-                    }
-                }
-                //yield return new WaitForFixedUpdate();
-            }*/
+   /* public IEnumerator _Search(float distance)
+    {
+        if (ammunition < 1)
+        {
+        PirateShipRigidbody.velocity = transform.forward * searchSpeed;
+
+        var chestRotation = Quaternion.LookRotation(chest.position = transform.position);
+
+        PirateShipRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, chestRotation));
+        }
+    }*/
+     ///tried adding Ammosearch function, could not get working. Commented out for the time being otherwise game wont run - Ruben
+    
 }
