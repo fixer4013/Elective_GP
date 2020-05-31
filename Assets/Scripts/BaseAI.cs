@@ -69,9 +69,9 @@ public class BaseAI
     {
         yield return Ship.__RapidFire();
     }
-    /* Tried adding ammo function, not yet functioning could use some help :)
-    public IEnumerator searchAmmo()
+    // Tried adding ammo function, not yet functioning could use some help :)
+    /*public IEnumerator Search(float distance)
     {
-        yield return Ship.__SearchAmmo();
+        Ship._Search(distance);
     }*/
 }

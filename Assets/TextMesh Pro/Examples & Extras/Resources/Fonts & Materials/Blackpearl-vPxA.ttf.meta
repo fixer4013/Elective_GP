@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 4f57340067a434c438b928ca5d4529ae
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BlackPearl
+  fontNames:
+  - BlackPearl
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1ea6c28d81b5dba48a09543c00ea198e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
