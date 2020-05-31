@@ -22,7 +22,7 @@ public class CompetitionManager : MonoBehaviour
             new MaxymAI(),
             new MartinAI(), 
         //Added a "new iljaAI" to the list. - Aadi.
-            new IljaAI()
+            new SjoekeAI()
     };
 
     // Start is called before the first frame update

@@ -293,7 +293,7 @@ public class PirateShipController : MonoBehaviour
     {
         if (currentHP < LowHP)
         {
-            //Add the code for PerkFive.
+            //SjoekeAI perk here.
         }
     }
 
