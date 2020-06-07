@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PirateShipController : MonoBehaviour
 {
@@ -12,31 +13,55 @@ public class PirateShipController : MonoBehaviour
     public GameObject Lookout = null;
     public GameObject[] sails = null;
     private BaseAI ai = null;
+    public Vector3 rotationZMax = new Vector3(0, 0, 10);
+    
+
+    // Added some floats etc while trying to fix my script - Ruben
+    public Transform chest;
+    public Rigidbody PirateShipRigidbody;
+    public float turn = 100.0f;
+    public float searchSpeed = 180.0f;
 
     public GameObject MinePrefab = null;
+
+
 
     private float BoatSpeed = 100.0f;
     private float SeaSize = 500.0f;
     private float RotationSpeed = 180.0f;
     public float currentBoatSpeed;
+    float inaccuracy = 15;
+    //float randomAngle = Random.Range(-15, 15);
+    
+
 
     //all values for the different types of ammo. -Martin, Maxym
     private int maxAmmoCap = 5;
     private int ammunition;
     public int cannonballs;
     public int mines;
-    
-    
+
+    //maxHP & currentHP to create the skeleton of health of ship obeying Ilja's AI. - Aadi.
+    public int maxHP = 100;
+    public int currentHP;
+    public int LowHP = 20;
+
+    //Speed boost variables -Maxym
+    public bool speedBoostCooldown;
+    float speedBoostValue = 1;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        //currentHp is same as maxHP at the game's start. - Aadi.
+        currentHP = maxHP;
     }
 
     private void Update()
     {
         //calculate boat speed based on the amount of ammo the ship carries. -Martin, Maxym
-        currentBoatSpeed = BoatSpeed - 14 * ammunition;
+        currentBoatSpeed = (BoatSpeed - 14 * ammunition) * speedBoostValue;
+
     }
 
     public void SetAI(BaseAI _ai) {
@@ -50,8 +75,9 @@ public class PirateShipController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+      
     }
 
     void OnTriggerStay(Collider other) {
@@ -108,10 +134,11 @@ public class PirateShipController : MonoBehaviour
     }
 
     //Added so you cant shoot when you dont have any cannonballs. -Maxym
+    //
     public IEnumerator __FireFront(float power) {
         if (cannonballs > 0)
         {
-            GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, CannonFrontSpawnPoint.rotation);
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonFrontSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
         }
@@ -121,8 +148,8 @@ public class PirateShipController : MonoBehaviour
     //Added so you cant shoot when you dont have any cannonballs. -Maxym
     public IEnumerator __FireLeft(float power) {
         if (cannonballs > 0)
-        {
-            GameObject newInstance = Instantiate(CannonBallPrefab, CannonLeftSpawnPoint.position, CannonLeftSpawnPoint.rotation);
+        {      
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonLeftSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonLeftSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
         }
@@ -133,7 +160,7 @@ public class PirateShipController : MonoBehaviour
     public IEnumerator __FireRight(float power) {
         if (cannonballs > 0)
         {
-            GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, CannonRightSpawnPoint.rotation);
+            GameObject newInstance = Instantiate(CannonBallPrefab, CannonRightSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonRightSpawnPoint.rotation);
             cannonballs -= 1;
             ammunition -= 1;
         }
@@ -149,6 +176,27 @@ public class PirateShipController : MonoBehaviour
             ammunition -= 3;
         }
         yield return new WaitForFixedUpdate();
+    }
+
+    //made a speedboost function that is possible to call during movement -Maxym
+    public void __SpeedBoost()
+    {
+        StartCoroutine(__SpeedBoostCoroutine());
+    }
+
+    //made a speedboost that gives more speed for a small time and after less speed for more time -Maxym
+    public IEnumerator __SpeedBoostCoroutine()
+    {
+        if (!speedBoostCooldown)
+        {
+            speedBoostCooldown = true;
+            speedBoostValue = 1.5f;
+            yield return new WaitForSeconds(1.5f);
+            speedBoostValue = 0.5f;
+            yield return new WaitForSeconds(4f);
+            speedBoostValue = 1;
+            speedBoostCooldown = false;
+        }
     }
 
     public void __SetColor(Color color) {
@@ -203,8 +251,79 @@ public class PirateShipController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-    
-    
-    
+    //Added a function to provide health reduction using the "currentHP" and "damage" integer. - Aadi.
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+    }
+    //Perk1 - Aadi.
+    public void PerkOne()
+    {
+        if (currentHP < LowHP)
+        {
+            //AadiAI perk here.
+        }
+    }
+    //Perk2 - Aadi.
+    public void PerkTwo()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkTwo.
+        }
+    }
+    //Perk3 - Aadi.
+    public void PerkThree()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkThree.
+        }
+    }
+    //Perk4 - Aadi.
+    public void PerkFour()
+    {
+        if (currentHP < LowHP)
+        {
+            //Add the code for PerkFour.
+        }
+    }
+    //Perk5 - Aadi.
+    public void PerkFive()
+    {
+        if (currentHP < LowHP)
+        {
+            //SjoekeAI perk here.
+        }
+    }
+
+    //Added a function for rapid fire - Martin
+    public IEnumerator __RapidFire()
+    {
+        if (cannonballs > 0)
+        {
+            var currentCannonBalls = cannonballs;
+            for (int i = 0; i < currentCannonBalls; i++)
+            {
+                GameObject newInstance = Instantiate(CannonBallPrefab, CannonFrontSpawnPoint.position, Quaternion.Euler(0, Random.Range(-inaccuracy, inaccuracy), 0) * CannonFrontSpawnPoint.rotation);
+                ammunition--;
+                cannonballs--;
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
+
+   /* public IEnumerator _Search(float distance)
+    {
+        if (ammunition < 1)
+        {
+        PirateShipRigidbody.velocity = transform.forward * searchSpeed;
+
+        var chestRotation = Quaternion.LookRotation(chest.position = transform.position);
+
+        PirateShipRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, chestRotation));
+        }
+    }*/
+     ///tried adding Ammosearch function, could not get working. Commented out for the time being otherwise game wont run - Ruben
     
 }

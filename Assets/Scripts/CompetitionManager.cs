@@ -12,18 +12,23 @@ public class CompetitionManager : MonoBehaviour
 
     private List<PirateShipController> pirateShips = new List<PirateShipController>();
 
+    BaseAI[] aiArray = new BaseAI[]
+    {
+        //Added 'AadiAI' to the list -Aadi.
+            new AadiAI(),
+        //Added 'RubenAI' to the list -Ruben
+            new RubenAI(),
+        //Added 'MaxymAI' to the list -Maxym
+            new MaxymAI(),
+            new MartinAI(), 
+        //Added a "new iljaAI" to the list. - Aadi.
+            new SjoekeAI()
+    };
+
     // Start is called before the first frame update
     void Start()
     {
-        BaseAI[] aiArray = new BaseAI[] {
-            new IljaAI(),
-        //Added 'RubenAI' to the list -Ruben
-            new RubenAI(),
-            new PondAI(),
-            new PondAI(),
-        //Added a "new iljaAI" to the list. - Aadi.
-            new IljaAI()
-        };
+        //moved the aiArray list command to outside. - Aadi.
         //changed the integer value of greater than i from 4 to 5. - Aadi.
         //Increased the size for Spawn Points section in Inspector Window. - Aadi.
         //Cloned the spawnpoint5 from spawnpoint4 and dragndropped it to Element 4. - Aadi.
@@ -33,6 +38,26 @@ public class CompetitionManager : MonoBehaviour
             PirateShipController pirateShipController = pirateShip.GetComponent<PirateShipController>();
             pirateShipController.SetAI(aiArray[i]);
             pirateShips.Add(pirateShipController);
+            if (i == 0)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkOne();
+            }
+            if (i == 1)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkTwo();
+            }
+            if (i == 2)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkThree();
+            }
+            if (i == 3)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkFour();
+            }
+            if (i == 4)
+            {
+                pirateShip.AddComponent<PirateShipController>().PerkFive();
+            }
         }
        
     }
@@ -43,9 +68,20 @@ public class CompetitionManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             foreach (var pirateShip in pirateShips) {
                 pirateShip.StartBattle();
-            // For now ammo is instantiated when the game starts -Ruben    
-                Instantiate(AmmunitionPrefab, new Vector3(-291, 30, 133), Quaternion.identity);
+                // For now ammo is instantiated when the game starts -Ruben
+                //Changed the coordinate from (-291, 30, 133) to (-278, 30, -275). - Aadi.
+                //Instantiate(AmmunitionPrefab, new Vector3(-278, 30, -275), Quaternion.identity);
             }
         }
+            // Made it so that 5 pieces of amma spawn when pressing the 'TAB' button instead of on start
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            Instantiate(AmmunitionPrefab, new Vector3(-278, 30, 275), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(303, 30, 285), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(-324, 30, -181), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(125, 30, -93), Quaternion.identity);
+            Instantiate(AmmunitionPrefab, new Vector3(355, 30, -296), Quaternion.identity);
+
+        }
+
     }
 }

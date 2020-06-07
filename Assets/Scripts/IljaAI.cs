@@ -8,6 +8,7 @@ public class IljaAI : BaseAI
         for (int i = 0; i < 10; i++)
         {
             yield return Ahead(200);
+            yield return RapidFire();
             yield return FireFront(1);
             yield return TurnLookoutLeft(90);
             yield return TurnLeft(360);
@@ -22,6 +23,7 @@ public class IljaAI : BaseAI
 
     public override void OnScannedRobot(ScannedRobotEvent e)
     {
-        Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
+        //commented out the debug. - Aadi
+        //Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
     }
 }

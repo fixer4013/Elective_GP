@@ -14,7 +14,6 @@ public class BaseAI
     // Events
     public virtual void OnScannedRobot(ScannedRobotEvent e)
     {
-        // 
     }
 
     public IEnumerator Ahead(float distance) {
@@ -57,7 +56,22 @@ public class BaseAI
         yield return Ship.__DropMine();
     }
 
+    public void SpeedBoost()
+    {
+        Ship.__SpeedBoost();
+    }
+
     public virtual IEnumerator RunAI() {
         yield return null;
     }
+
+    public IEnumerator RapidFire()
+    {
+        yield return Ship.__RapidFire();
+    }
+    // Tried adding ammo function, not yet functioning could use some help :)
+    /*public IEnumerator Search(float distance)
+    {
+        Ship._Search(distance);
+    }*/
 }
