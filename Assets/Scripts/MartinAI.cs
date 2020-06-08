@@ -9,7 +9,7 @@ public class MartinAI : BaseAI
     {
         for (int i = 0; i < 10; i++)
         {
-            yield return Ahead(200);
+            yield return Ahead(500);
             yield return FireFront(1);
             yield return TurnLookoutLeft(90);
             yield return TurnLeft(360);
