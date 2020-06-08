@@ -185,6 +185,13 @@ public class PirateShipController : MonoBehaviour
         yield return new WaitForFixedUpdate();
     }
 
+    //Started working on the repair kit - Martin
+    public IEnumerator __RepairKit()
+    {
+        yield return new WaitForSeconds(2f);
+        RepairShip();
+    }
+
     //made a speedboost function that is possible to call during movement -Maxym
     public void __SpeedBoost()
     {
@@ -267,6 +274,13 @@ public class PirateShipController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void RepairShip()
+    {
+        
+    }
+
+    
     //Perk1 - Aadi.
     public void PerkOne()
     {

@@ -57,6 +57,11 @@ public class BaseAI
         yield return Ship.__DropMine();
     }
 
+    public IEnumerator RepairKit()
+    {
+        yield return Ship.__RepairKit();
+    }
+
     public void SpeedBoost()
     {
         Ship.__SpeedBoost();
