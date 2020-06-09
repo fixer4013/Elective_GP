@@ -27,6 +27,7 @@
           <e p="PondAI.cs" t="Include" />
           <e p="RubenAI.cs" t="Include" />
           <e p="SjoekeAI.cs" t="Include" />
+          <e p="SpawnMedkit.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
