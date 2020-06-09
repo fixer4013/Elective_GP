@@ -26,7 +26,7 @@ public class PirateShipController : MonoBehaviour
 
     public GameObject MinePrefab = null;
 
-
+    public GameObject MedKit; 
 
     private float BoatSpeed = 100.0f;
     private float SeaSize = 500.0f;
@@ -43,9 +43,14 @@ public class PirateShipController : MonoBehaviour
     private int weight;
     public int cannonballs;
     public int mines;
-
+    
+    //Added a medkit health
+    private int medKitAmmount = 20;
+    private Coroutine startRepair;
+    
     //maxHP & currentHP to create the skeleton of health of ship obeying Ilja's AI. - Aadi.
     private int maxHP;
+    [SerializeField]
     private int currentHP;
     public int LowHP;
 
@@ -103,6 +108,8 @@ public class PirateShipController : MonoBehaviour
             ai.OnScannedRobot(scannedRobotEvent);
         }
     }
+
+    
 
     public IEnumerator __Ahead(float distance) {
         int numFrames = (int)(distance / (currentBoatSpeed * Time.fixedDeltaTime));
@@ -212,8 +219,16 @@ public class PirateShipController : MonoBehaviour
     //Started working on the repair kit - Martin
     public IEnumerator __RepairKit()
     {
-        yield return new WaitForSeconds(2f);
-        RepairShip();
+        yield return new WaitForSeconds(3f);
+        if (maxHP - medKitAmmount < currentHP)
+        {
+            currentHP = maxHP;
+        }
+        else
+        {
+            currentHP += medKitAmmount;
+        }
+       Destroy(MedKit);
     }
 
     //made a speedboost function that is possible to call during movement -Maxym
@@ -288,7 +303,25 @@ public class PirateShipController : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+
+        if (other.tag == "MedKit")
+        {
+           
+            MedKit = other.gameObject;
+            startRepair = StartCoroutine(__RepairKit());
+        }
     }
+
+    //This is to stop the medKit coroutine - Martin
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "MedKit")
+        {
+            MedKit = null;
+            StopCoroutine(startRepair);
+        }
+    }
+
     //Added a function to provide health reduction using the "currentHP" and "damage" integer. - Aadi.
     public void TakeDamage(int damage)
     {
@@ -301,7 +334,7 @@ public class PirateShipController : MonoBehaviour
 
     public void RepairShip()
     {
-        
+       
     }
 
     

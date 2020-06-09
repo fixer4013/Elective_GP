@@ -13,7 +13,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PirateShipController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MedKit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MaxymAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ammunition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RubenAI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -85,7 +84,8 @@
       <workItem from="1588097639919" duration="2959000" />
       <workItem from="1588852568090" duration="4455000" />
       <workItem from="1590050230118" duration="1391000" />
-      <workItem from="1591645705398" duration="1195000" />
+      <workItem from="1591645705398" duration="1586000" />
+      <workItem from="1591729332676" duration="5797000" />
     </task>
     <servers />
   </component>
