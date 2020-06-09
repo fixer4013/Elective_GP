@@ -40,6 +40,10 @@ public class BaseAI
     public IEnumerator TurnRight(float angle) {
         yield return Ship.__TurnRight(angle);
     }
+        //added turntowards function which can be used to direct your ship to a specific point -Ruben
+    public IEnumerator TurnTowards(Vector3 position){
+        yield return Ship.__TurnTowards(position);
+    }
 
     public IEnumerator FireFront(float power) {
         yield return Ship.__FireFront(power);
@@ -75,9 +79,5 @@ public class BaseAI
     {
         yield return Ship.__RapidFire();
     }
-    // Tried adding ammo function, not yet functioning could use some help :)
-    /*public IEnumerator Search(float distance)
-    {
-        Ship._Search(distance);
-    }*/
+    
 }

@@ -17,10 +17,12 @@ public class PirateShipController : MonoBehaviour
     
 
     // Added some floats etc while trying to fix my script - Ruben
-    public Transform chest;
+    
     public Rigidbody PirateShipRigidbody;
     public float turn = 100.0f;
     public float searchSpeed = 180.0f;
+
+    public Vector3 chest;
 
     public GameObject MinePrefab = null;
 
@@ -92,6 +94,14 @@ public class PirateShipController : MonoBehaviour
             scannedRobotEvent.Name = other.name;
             ai.OnScannedRobot(scannedRobotEvent);
         }
+        // new scannedrobotevent so the ship recognizes the chest
+        else if (other.tag == "chest")
+        {
+            ScannedRobotEvent scannedRobotEvent = new ScannedRobotEvent();
+            scannedRobotEvent.Distance = Vector3.Distance(transform.position, other.transform.position);
+            scannedRobotEvent.Name = other.name;
+            ai.OnScannedRobot(scannedRobotEvent);
+        }
     }
 
     public IEnumerator __Ahead(float distance) {
@@ -132,6 +142,20 @@ public class PirateShipController : MonoBehaviour
 
             yield return new WaitForFixedUpdate();            
         }
+    }
+    // added so you can turn towards ammo when weight gets below 2
+    public IEnumerator __TurnTowards(Vector3 chest)
+    {
+        // get the direction by subtraction: the difference is what we need
+        if (weight < 2)
+        {
+        var dirToPosition = chest - transform.position;
+        float angle = Vector3.SignedAngle(transform.forward, dirToPosition, Vector3.up);
+        Debug.Log(angle);
+        if(angle < 0) yield return __TurnLeft(-angle); 
+        else yield return __TurnRight(angle); 
+        }
+        
     }
 
     public IEnumerator __DoNothing() {
