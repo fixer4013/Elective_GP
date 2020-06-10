@@ -47,12 +47,15 @@ public class PirateShipController : MonoBehaviour
     //Added a medkit health
     private int medKitAmmount = 20;
     private Coroutine startRepair;
-    
+
+    //Changed private int to public so that the UI script can find the HP values
     //maxHP & currentHP to create the skeleton of health of ship obeying Ilja's AI. - Aadi.
-    private int maxHP;
+    public int maxHP;
     [SerializeField]
-    private int currentHP;
+    public int currentHP;
     public int LowHP;
+
+    public HealthBar healthBar;
 
     //Speed boost variables -Maxym
     public bool speedBoostCooldown;
@@ -65,8 +68,10 @@ public class PirateShipController : MonoBehaviour
         maxHP = 100;
         LowHP = 20;
         currentHP = maxHP;
+        healthBar.SetMaxHealth(maxHP);
         cannonballs = 2;
         weight = 2;
+        
     }
 
     private void Update()
@@ -326,6 +331,9 @@ public class PirateShipController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
+
+        healthBar.SetHealth(currentHP);
+
         if (currentHP <= 0)
         {
             Destroy(this.gameObject);
