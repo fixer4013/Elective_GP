@@ -28,7 +28,7 @@ public class MaxymAI : BaseAI
             {
 
             }
-
+            yield return 0;
         }
     }
 
