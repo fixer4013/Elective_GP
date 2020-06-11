@@ -21,9 +21,11 @@ public class SpawnMedkit : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(60);
+            
+            yield return new WaitForSeconds(5);
             Instantiate(MedKitPrefab, new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400)), Quaternion.identity);
-
+            
         }
+       
     }
 }

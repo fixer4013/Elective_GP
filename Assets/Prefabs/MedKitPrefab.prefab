@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1415033519700844907}
   - component: {fileID: 7743124609535463701}
   m_Layer: 10
-  m_Name: buoy
+  m_Name: MedKitPrefab
   m_TagString: MedKit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
