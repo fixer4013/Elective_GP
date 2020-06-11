@@ -10,22 +10,17 @@ public class SpawnMedkit : MonoBehaviour
     {
         StartCoroutine(SpawnMedKit());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public IEnumerator SpawnMedKit()
     {
         while (true)
         {
-            
-            yield return new WaitForSeconds(5);
-            Instantiate(MedKitPrefab, new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400)), Quaternion.identity);
-            
+            yield return new WaitForSeconds(30);
+            var newMedKit = Instantiate(MedKitPrefab, new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400)), Quaternion.identity);
+            Destroy(newMedKit.gameObject, 15f);
         }
        
     }
+    
+    
 }

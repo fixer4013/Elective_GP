@@ -30,10 +30,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/IljaAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CompetitionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MartinAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BaseAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MedKit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MaxymAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PirateShipController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MartinAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnMedkit.cs" />
       </list>
     </option>
@@ -89,6 +90,7 @@
       <workItem from="1591645705398" duration="1586000" />
       <workItem from="1591729332676" duration="9543000" />
       <workItem from="1591889854472" duration="1439000" />
+      <workItem from="1591902768446" duration="4457000" />
     </task>
     <servers />
   </component>
