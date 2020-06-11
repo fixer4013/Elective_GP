@@ -39,26 +39,26 @@ public class CompetitionManager : MonoBehaviour
             PirateShipController pirateShipController = pirateShip.GetComponent<PirateShipController>();
             pirateShipController.SetAI(aiArray[i]);
             pirateShips.Add(pirateShipController);
-            if (i == 0)
-            {
-                pirateShip.AddComponent<PirateShipController>().PerkOne();
-            }
-            if (i == 1)
-            {
-                pirateShip.AddComponent<PirateShipController>().PerkTwo();
-            }
-            if (i == 2)
-            {
-                pirateShip.AddComponent<PirateShipController>().PerkThree();
-            }
-            if (i == 3)
-            {
-                pirateShip.AddComponent<PirateShipController>().PerkFour();
-            }
-            if (i == 4)
-            {
-                pirateShip.AddComponent<PirateShipController>().PerkFive();
-            }
+            //if (i == 0)
+            //{
+            //    pirateShip.AddComponent<PirateShipController>().PerkOne();
+            //}
+            //if (i == 1)
+            //{
+            //    pirateShip.AddComponent<PirateShipController>().PerkTwo();
+            //}
+            //if (i == 2)
+            //{
+            //    pirateShip.AddComponent<PirateShipController>().PerkThree();
+            //}
+            //if (i == 3)
+            //{
+            //    pirateShip.AddComponent<PirateShipController>().PerkFour();
+            //}
+            //if (i == 4)
+            //{
+            //    pirateShip.AddComponent<PirateShipController>().PerkFive();
+            //}
         }
        
     }

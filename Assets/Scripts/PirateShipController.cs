@@ -289,7 +289,6 @@ public class PirateShipController : MonoBehaviour
     //Added code based on what type of ammo you pick up, which is set inside the ammunition script on the ammo crates. -Maxym, partly Martin
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(this.tag);
         if (other.GetComponent<Ammunition>())
         {
             if (other.GetComponent<Ammunition>().ammoType == "Cannonball")
