@@ -116,6 +116,7 @@ public class PirateShipController : MonoBehaviour
             scannedRobotEvent.Name = other.name;
             ai.OnScannedRobot(scannedRobotEvent);
         }
+    
     }
 
     
