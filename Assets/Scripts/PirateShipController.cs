@@ -62,13 +62,17 @@ public class PirateShipController : MonoBehaviour
     float speedBoostValue = 1;
 
     // Start is called before the first frame update
+    void Start()
+    {
+        healthBar.SetMaxHealth(maxHP);
+    }
     void Awake()
     {
         //currentHp is same as maxHP at the game's start. - Aadi.
         maxHP = 100;
         LowHP = 20;
         currentHP = maxHP;
-        healthBar.SetMaxHealth(maxHP);
+        
         cannonballs = 2;
         weight = 2;
         
