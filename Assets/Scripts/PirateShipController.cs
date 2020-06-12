@@ -36,8 +36,10 @@ public class PirateShipController : MonoBehaviour
     float inaccuracy = 15;
     //float randomAngle = Random.Range(-15, 15);
 
+    //some variables to get your own position -Maxym
     public Vector3 currentPosition;
     public float currentRotation;
+    public float currentLookOutRotation;
 
     //all values for the different types of ammo. -Martin, Maxym
     private int maxAmmoCap = 5;
@@ -85,6 +87,7 @@ public class PirateShipController : MonoBehaviour
         currentBoatSpeed = (BoatSpeed - 14 * weight) * speedBoostValue;
         currentPosition = transform.position;
         currentRotation = transform.rotation.eulerAngles.y;
+        currentLookOutRotation = Lookout.transform.localRotation.eulerAngles.y;
     }
 
     public void SetAI(BaseAI _ai) {
