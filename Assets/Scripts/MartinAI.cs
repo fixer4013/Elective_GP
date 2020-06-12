@@ -28,11 +28,11 @@ public class MartinAI : BaseAI
                     {
                         yield return TurnLeft(Random.Range(30, 180));
                         yield return Ahead(Random.Range(10, 800));
-                        yield return TurnLookoutLeft(180);
                         yield return TurnRight(Random.Range(30, 180));
                         yield return Ahead(Random.Range(200, 300));
                         yield return TurnRight(Random.Range(30, 90));
                         yield return TurnLookoutLeft(Random.Range(30, 360));
+             
                     }
                     if (Ship.currentHP <= 40)
                     {
@@ -95,6 +95,7 @@ public class MartinAI : BaseAI
             if (Ship.currentHP > 40)
             {
                 mode = "hunt";
+                
             }
             else 
             {
