@@ -99,7 +99,7 @@ public class CompetitionManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(8);
             Instantiate(AmmunitionPrefab, new Vector3(Random.Range(-400, 400), 5, Random.Range(-400, 400)), Quaternion.identity);
         }
     }
