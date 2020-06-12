@@ -106,6 +106,10 @@ public class PirateShipController : MonoBehaviour
             ScannedRobotEvent scannedRobotEvent = new ScannedRobotEvent();
             scannedRobotEvent.Distance = Vector3.Distance(transform.position, other.transform.position);
             scannedRobotEvent.Name = other.name;
+            scannedRobotEvent.Position = other.transform.position;
+            scannedRobotEvent.Rotation = other.transform.rotation.eulerAngles.y;
+            scannedRobotEvent.Speed = other.GetComponent<PirateShipController>().currentBoatSpeed;
+            scannedRobotEvent.Health = other.GetComponent<PirateShipController>().currentHP;
             ai.OnScannedRobot(scannedRobotEvent);
         }
         // new scannedrobotevent so the ship recognizes the chest

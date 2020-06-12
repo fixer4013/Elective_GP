@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ScannedRobotEvent {
     public string Name;
-    public float Distance; 
+    public float Distance;
+    public Vector3 Position;
+    public float Rotation;
+    public float Speed;
+    public float Health;
 }
 
 public class BaseAI
