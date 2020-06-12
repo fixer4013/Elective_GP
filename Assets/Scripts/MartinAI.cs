@@ -5,30 +5,30 @@ using UnityEngine;
 public class MartinAI : BaseAI
 {
     private string mode = "patrol";
-    
+     
    
     // Start is called before the first frame update
     public override IEnumerator RunAI()
     {
 
-        yield return Ahead(500);
-        yield return TurnLookoutLeft(180);
-        yield return TurnLeft(90);
-        yield return TurnLookoutLeft(180);
-        yield return Ahead(500);
-
+        yield return Ahead(Random.Range(100, 300));
+        
         while (true)
         {
-            // 
+            //During patrol mode I want the ship to go to specific coordinates through a pattern it could be a square for example
             switch (mode)
             { 
                 case "patrol":
                     yield return TurnLookoutRight(180);
-                    yield return TurnRight(30);
-                    yield return Ahead(500);
-                    if (Ship.cannonballs == 3)
+                    yield return TurnLeft(Random.Range(30, 180));
+                    yield return Ahead(Random.Range(10, 500));
+                    yield return TurnLookoutLeft(180);
+                    yield return TurnRight(Random.Range(30, 180));
+                    
+                    
+                    if (Ship.currentHP <= 40)
                     {
-                        mode = "hunt";
+                        mode = "flee";
                     }
                     break;    
                     
@@ -37,9 +37,12 @@ public class MartinAI : BaseAI
                     break;
                 
                 case "flee":
-                    yield return TurnLookoutRight(5);
-                    yield return TurnRight(2);
-                    yield return Ahead(100);
+                    yield return RapidFire();
+                    yield return TurnLeft(180);
+                    yield return TurnLookoutLeft(180);
+                    yield return Ahead(500);
+
+                    mode = "patrol";
                     
                     break;
             }
@@ -54,7 +57,13 @@ public class MartinAI : BaseAI
     public override void OnScannedRobot(ScannedRobotEvent e)
     {
         Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
+        if (e.Name == "boat")
+        {
+            mode = "hunt";
+        }
     }
+
+
     
-    
+
 }
