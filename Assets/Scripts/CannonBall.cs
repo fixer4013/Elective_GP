@@ -5,7 +5,7 @@ using UnityEngine;
 public class CannonBall : MonoBehaviour
 {
     //A new integer is used to replace the parameter of TakeDamage(int damage) method in PirateShipController. - Aadi.
-    public int newDamage = 10;
+    public int newDamage = 20;
     // Start is called before the first frame update
     void Start()
     {

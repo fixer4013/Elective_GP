@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ScannedRobotEvent {
     public string Name;
-    public float Distance; 
+    public float Distance;
+    public Vector3 Position;
+    public float Rotation;
+    public float Speed;
+    public float Health;
 }
 
 public class BaseAI
@@ -14,6 +18,7 @@ public class BaseAI
     // Events
     public virtual void OnScannedRobot(ScannedRobotEvent e)
     {
+        
     }
 
     public IEnumerator Ahead(float distance) {
@@ -38,6 +43,10 @@ public class BaseAI
 
     public IEnumerator TurnRight(float angle) {
         yield return Ship.__TurnRight(angle);
+    }
+        //added turntowards function which can be used to direct your ship to a specific point -Ruben
+    public IEnumerator TurnTowards(Vector3 position){
+        yield return Ship.__TurnTowards(position);
     }
 
     public IEnumerator FireFront(float power) {
@@ -69,9 +78,5 @@ public class BaseAI
     {
         yield return Ship.__RapidFire();
     }
-    // Tried adding ammo function, not yet functioning could use some help :)
-    /*public IEnumerator Search(float distance)
-    {
-        Ship._Search(distance);
-    }*/
+    
 }

@@ -16,22 +16,26 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MaxymAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ammunition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RubenAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnMedkit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MartinAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PondAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BaseAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IljaAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CompetitionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CannonBall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CompetitionManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/BaseAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IljaAI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PirateShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CompetitionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BaseAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MedKit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MaxymAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PirateShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MartinAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnMedkit.cs" />
       </list>
     </option>
   </component>
@@ -83,6 +87,10 @@
       <workItem from="1588097639919" duration="2959000" />
       <workItem from="1588852568090" duration="4455000" />
       <workItem from="1590050230118" duration="1391000" />
+      <workItem from="1591645705398" duration="1586000" />
+      <workItem from="1591729332676" duration="9543000" />
+      <workItem from="1591889854472" duration="1439000" />
+      <workItem from="1591902768446" duration="4457000" />
     </task>
     <servers />
   </component>

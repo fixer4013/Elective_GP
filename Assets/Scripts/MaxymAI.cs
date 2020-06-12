@@ -2,29 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class MonoClass : MonoBehaviour
+{
+    public float test = 10;
+}
+
 public class MaxymAI : BaseAI
 {
+    string mode = null;
+    
     public override IEnumerator RunAI() {
-        for (int i = 0; i < 10; i++)
+        mode = "search";
+        //yield return TurnLeft(45);
+        yield return FireFront(1);
+        yield return FireFront(1);
+        yield return Ahead(400);
+        while (true)
         {
-            yield return Ahead(200);
-            SpeedBoost();
-            yield return Ahead(200);
+            if (mode == "search")
+            {
+                yield return Ahead(25);
+                yield return TurnRight(5);
+                yield return TurnLookoutLeft(5);
+                Debug.Log(Ship.currentPosition);
+                Debug.Log(Ship.currentLookOutRotation);
+            }
+            if (mode == "hunt")
+            {
 
-            yield return TurnLookoutLeft(90);
-            yield return TurnLeft(360);
-            yield return FireLeft(1);
-            yield return TurnLookoutRight(180);
-            yield return Back(200);
-            yield return FireRight(1);
-            yield return TurnLookoutLeft(90);
-            yield return TurnRight(90);
+            }
+            yield return 0;
         }
     }
 
     public override void OnScannedRobot(ScannedRobotEvent e)
     {
-        //commented out the debug. - Aadi
-        //Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
+        //Debug.Log(e.Health + " " + e.Speed + " " + e.Position + " " + e.Rotation);
     }
 }
+
+
