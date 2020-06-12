@@ -35,8 +35,9 @@ public class PirateShipController : MonoBehaviour
     //Added Inaccuracy. -Sjoeke
     float inaccuracy = 15;
     //float randomAngle = Random.Range(-15, 15);
-    
 
+    public Vector3 currentPosition;
+    public float currentRotation;
 
     //all values for the different types of ammo. -Martin, Maxym
     private int maxAmmoCap = 5;
@@ -82,7 +83,8 @@ public class PirateShipController : MonoBehaviour
     {
         //calculate boat speed based on the amount of ammo the ship carries. -Martin, Maxym
         currentBoatSpeed = (BoatSpeed - 14 * weight) * speedBoostValue;
-
+        currentPosition = transform.position;
+        currentRotation = transform.rotation.eulerAngles.y;
     }
 
     public void SetAI(BaseAI _ai) {

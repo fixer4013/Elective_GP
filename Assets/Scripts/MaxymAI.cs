@@ -12,6 +12,7 @@ public class MaxymAI : BaseAI
     string mode = null;
     
     public override IEnumerator RunAI() {
+        mode = "search";
         //yield return TurnLeft(45);
         yield return FireFront(1);
         yield return FireFront(1);
@@ -23,6 +24,7 @@ public class MaxymAI : BaseAI
                 yield return Ahead(25);
                 yield return TurnRight(5);
                 //yield return TurnLookoutLeft(5);
+                Debug.Log(Ship.currentPosition);
             }
             if (mode == "hunt")
             {
@@ -34,7 +36,7 @@ public class MaxymAI : BaseAI
 
     public override void OnScannedRobot(ScannedRobotEvent e)
     {
-        Debug.Log(e.Health + " " + e.Speed + " " + e.Position + " " + e.Rotation);
+        //Debug.Log(e.Health + " " + e.Speed + " " + e.Position + " " + e.Rotation);
     }
 }
 
