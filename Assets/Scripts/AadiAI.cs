@@ -48,7 +48,16 @@ public class AadiAI : BaseAI
             yield return TurnLookoutLeft(5);
             yield return Ahead(50);
             yield return TurnLookoutLeft(5);
-
+            yield return TurnRight(5);
+            yield return RapidFire();
+            yield return Back(10);
+            yield return Ahead(50);
+            yield return Ahead(50);
+            yield return TurnRight(5);
+            yield return Back(10);
+            yield return TurnLookoutLeft(5);
+            yield return Ahead(50);
+            yield return TurnLookoutLeft(5);
         }
     }
 
