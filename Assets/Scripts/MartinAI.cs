@@ -9,14 +9,16 @@ public class MartinAI : BaseAI
 
     private Vector3 enemyPosition;
 
-    private float enemyRotation; 
+    private float enemyRotation;
+
+    private bool hasFled = false;
     
    
     // Start is called before the first frame update
     public override IEnumerator RunAI()
     {
 
-        yield return Ahead(Random.Range(100, 300));
+        yield return Ahead(Random.Range(100, 600));
         
         while (true)
         {
@@ -27,14 +29,14 @@ public class MartinAI : BaseAI
                     if (mode != "hunt")
                     {
                         yield return TurnLeft(Random.Range(30, 180));
-                        yield return Ahead(Random.Range(10, 800));
+                        yield return Ahead(Random.Range(10, 200));
                         yield return TurnRight(Random.Range(30, 180));
-                        yield return Ahead(Random.Range(200, 300));
+                        yield return Ahead(Random.Range(100, 200));
                         yield return TurnRight(Random.Range(30, 90));
                         yield return TurnLookoutLeft(Random.Range(30, 360));
              
                     }
-                    if (Ship.currentHP <= 40)
+                    if (Ship.currentHP <= 40 && hasFled == false)
                     {
                         mode = "flee";
                     }
@@ -72,9 +74,11 @@ public class MartinAI : BaseAI
                 case "flee":
                     yield return TurnLeft(180);
                     yield return TurnLookoutLeft(180);
+                    SpeedBoost();
                     yield return Ahead(500);
 
                     mode = "patrol";
+                    hasFled = true;
                     
                     break;
             }
