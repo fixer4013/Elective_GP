@@ -4,21 +4,51 @@ using UnityEngine;
 
 public class AadiAI : BaseAI
 {
+    
+    private string mode = null;
     public override IEnumerator RunAI()
     {
+        mode = "circle";
         for (int i = 0; i < 10; i++)
         {
-            yield return Ahead(100);
-            yield return RapidFire();
+            yield return Ahead(10);
+            yield return TurnLeft(5);
+            yield return Ahead(50);
             yield return FireFront(1);
-            yield return TurnLookoutLeft(90);
-            yield return TurnLeft(360);
-            yield return FireLeft(1);
-            yield return TurnLookoutRight(150);
-            yield return Back(300);
+            yield return TurnLookoutRight(45);
+            yield return TurnLeft(10);
             yield return FireRight(1);
+            yield return Ahead(100);
             yield return TurnLookoutLeft(90);
-            yield return TurnRight(90);
+            yield return FireFront(1);
+            yield return FireLeft(1);
+            yield return FireRight(1);
+            if (mode == "circle")
+            {
+                yield return TurnRight(45);
+                yield return Ahead(20);
+
+            }
+            yield return Back(10);
+            yield return TurnRight(5);
+            yield return Ahead(50);
+            yield return TurnLookoutLeft(5);
+            yield return Ahead(50);
+            yield return TurnRight(5);
+            yield return Back(10);
+            yield return TurnLookoutLeft(5);
+            yield return Ahead(50);
+            yield return Ahead(50);
+            yield return TurnRight(5);
+            yield return Back(10);
+            yield return Ahead(50);
+            yield return Ahead(50);
+            yield return TurnRight(5);
+            yield return Back(10);
+            yield return TurnLookoutLeft(5);
+            yield return Ahead(50);
+            yield return TurnLookoutLeft(5);
+
         }
     }
 
@@ -26,5 +56,10 @@ public class AadiAI : BaseAI
     {
         //commented out the debug. - Aadi
         //Debug.Log("Ship detected: " + e.Name + " at distance: " + e.Distance);
+        if (e.Name == "boat")
+        {
+            FireFront(1);
+            FireLeft(1);
+        }
     }
 }
