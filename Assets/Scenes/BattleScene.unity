@@ -611,7 +611,6 @@ GameObject:
   - component: {fileID: 181533884}
   - component: {fileID: 181533883}
   - component: {fileID: 181533882}
-  - component: {fileID: 181533881}
   m_Layer: 5
   m_Name: Health Bar (4)
   m_TagString: Untagged
@@ -639,19 +638,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.3197, y: -42.312}
   m_SizeDelta: {x: 140.6395, y: 11.376251}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &181533881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181533879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9cfeb49d884224bb091081ac5c96cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 181533882}
 --- !u!114 &181533882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,7 +1138,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1619,7 +1605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &758399212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1849,7 +1835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &792984093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1943,7 +1929,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2000,7 +1986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804448268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2579,7 +2565,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3409,14 +3395,13 @@ GameObject:
   - component: {fileID: 1303359898}
   - component: {fileID: 1303359897}
   - component: {fileID: 1303359896}
-  - component: {fileID: 1303359895}
   m_Layer: 5
   m_Name: Health Bar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1303359894
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3437,19 +3422,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.3197, y: -42.312}
   m_SizeDelta: {x: 140.6395, y: 11.376251}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1303359895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303359893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9cfeb49d884224bb091081ac5c96cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1303359896}
 --- !u!114 &1303359896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,7 +3691,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4003,7 +3975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1492408349
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4076,14 +4048,13 @@ GameObject:
   - component: {fileID: 1508425378}
   - component: {fileID: 1508425377}
   - component: {fileID: 1508425380}
-  - component: {fileID: 1508425379}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508425376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4140,19 +4111,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508425375}
   m_CullTransparentMesh: 0
---- !u!114 &1508425379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508425375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9cfeb49d884224bb091081ac5c96cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1508425380}
 --- !u!114 &1508425380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4290,14 +4248,13 @@ GameObject:
   - component: {fileID: 1558770244}
   - component: {fileID: 1558770243}
   - component: {fileID: 1558770242}
-  - component: {fileID: 1558770241}
   m_Layer: 5
   m_Name: Health Bar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1558770240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4318,19 +4275,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.3197, y: -42.312}
   m_SizeDelta: {x: 140.6395, y: 11.376251}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1558770241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558770239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9cfeb49d884224bb091081ac5c96cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1558770242}
 --- !u!114 &1558770242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4703,7 +4647,6 @@ GameObject:
   - component: {fileID: 1635351452}
   - component: {fileID: 1635351451}
   - component: {fileID: 1635351450}
-  - component: {fileID: 1635351449}
   m_Layer: 5
   m_Name: Health Bar (3)
   m_TagString: Untagged
@@ -4731,19 +4674,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.3197, y: -42.312}
   m_SizeDelta: {x: 140.6395, y: 11.376251}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1635351449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635351447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9cfeb49d884224bb091081ac5c96cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1635351450}
 --- !u!114 &1635351450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5341,7 +5271,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5679,7 +5609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1856738960
 RectTransform:
   m_ObjectHideFlags: 0
