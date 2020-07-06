@@ -42,7 +42,7 @@ public class CompetitionManager : MonoBehaviour
             if (i == 0)
             {
                 pirateShip.name = "Aadi";
-                pirateShipController.cannonballs += 100;
+                //pirateShipController.cannonballs += 100;
                 //pirateShip.AddComponent<PirateShipController>().PerkOne();
             }
             if (i == 1)

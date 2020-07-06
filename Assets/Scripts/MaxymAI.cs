@@ -24,8 +24,8 @@ public class MaxymAI : BaseAI
                 yield return Ahead(25);
                 yield return TurnRight(5);
                 yield return TurnLookoutLeft(5);
-                Debug.Log(Ship.currentPosition);
-                Debug.Log(Ship.currentLookOutRotation);
+                //Debug.Log(Ship.currentPosition);
+                //Debug.Log(Ship.currentLookOutRotation);
             }
             if (mode == "hunt")
             {
